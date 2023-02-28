@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+
+import Navbar from "./Components/Navbar"
+import Home from "./Pages/Home";
+import Carousel from "./Pages/Carousel"
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Router>
+      <Navbar pages={['Home', 'Carousel']} />
 
-export default App;
+      <main className="w-[95vw] mx-auto max-h-[90vh] min-h-[85vh] h-[85vh] border mt-2 overflow-hidden flex flex-col rounded-xl">
+        <Routes>
+          {/* default */}
+          <Route path="/" element={<Home />} />
+
+          {/* pages */}
+          <Route exact path='/Home' element={<Home />} />
+          <Route exact path='/Carousel' element={<Carousel seconds={2} isPlaying={true} />} />
+        </Routes>
+      </main>
+    </Router>
+
+  )
+}
+export default App
