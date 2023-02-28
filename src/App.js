@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from "./Components/Navbar"
 import Home from "./Pages/Home";
 import Carousel from "./Pages/Carousel"
+import Error from "./Pages/Error";
 
 const App = () => {
 
@@ -20,6 +21,9 @@ const App = () => {
           {/* pages */}
           <Route exact path='/Home' element={<Home />} />
           <Route exact path='/Carousel' element={<Carousel seconds={2} isPlaying={true} />} />
+
+          {/* Error page */}
+          <Route path="*" element={<Error />} />
         </Routes>
       </main>
     </Router>
