@@ -6,10 +6,6 @@
   .next-prev-btn {
     @apply text-4xl;
   }
-
-  .nav {
-    @apply font-bold text-orange;
-  }
 }
 @layer base {
   input[type="number"]::-webkit-inner-spin-button,
