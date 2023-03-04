@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js}'],
+  content: ['./src/**/*.{html,js,svg}'],
   theme: {
     colors: {
       'black': '#0C1618',
       'blue': '#162B8C',
       'yellow': '#F5CC00',
+      'yellow-accent': '#FFD91A',
       'orange': '#FF900F',
       "white": "#FFFFFF",
       "silver": "#C0C0C0",
@@ -32,7 +33,16 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      }
-    }
-  },
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out 5',
+      },
+    },
+  }
 }

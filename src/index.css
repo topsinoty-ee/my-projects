@@ -6,6 +6,9 @@
   .next-prev-btn {
     @apply text-4xl;
   }
+  #close{
+    @apply hover:animate-wiggle
+  }
 }
 @layer base {
   input[type="number"]::-webkit-inner-spin-button,
