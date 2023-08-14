@@ -18,5 +18,9 @@ const ClosedBox = ({ value }) => {
         </div>
     )
 }
+
+const CodeDisplayBox =({})=>{
+    
+}
 export { OpenBox, ClosedBox }
 

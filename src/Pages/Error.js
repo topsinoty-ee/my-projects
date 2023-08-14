@@ -18,6 +18,9 @@ const Error = () => {
                         <Link to='/Carousel' className="underline">Carousel</Link>
                     </li>
                     <li>
+                        <Link to='/Components' className="underline">Components</Link>
+                    </li>
+                    <li>
                         <span>Find out <a className="underline" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404" target="_blank" rel="noreferrer" >more</a></span>
                     </li>
                 </ul>
