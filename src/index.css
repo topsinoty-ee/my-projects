@@ -1,3 +1,5 @@
+/** @format */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,15 +8,29 @@
   .next-prev-btn {
     @apply text-4xl;
   }
+  #close {
+    @apply hover:animate-wiggle
+  }
+  .masonry {
+    column-count: 2; /* Number of columns */
+    gap: 1rem; /* Gap between columns */
+  }
 
-  .nav {
-    @apply font-bold text-orange;
+  .masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1rem; /* Gap between items */
+    break-inside: avoid-column; /* Prevent items from breaking across columns */
   }
 }
 @layer base {
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
+}
+
+.button {
+  @apply px-4 py-2 rounded bg-blue text-yellow hover:font-semibold
 }

@@ -48,19 +48,25 @@ const Carousel = ({ seconds, isPlaying }) => {
                 <button className='next-prev-btn' onClick={() => setCurrentImageIndex((currentImageIndex + 1 + images.length) % images.length)}>{'>'}</button>
             </div>
 
-            <div className='h-[50%] bg-primary flex items-center justify-around'>
+            <div className='h-[50%] bg-yellow flex justify-center content-center'>
                 {/* set speed */}
-                <div className='flex items-center bg-orange p-10 rounded-lg space-x-4'>
+                <div className='flex items-center justify-center bg-orange p-10 space-x-4 w-1/2'>
                     <div>
-                        <span className='rounded-l-xl p-1 bg-[#fff] inline-block'>Set speed: </span>
+                        <span className='rounded-l-xl p-1 bg-white inline-block'>Set speed: </span>
                         <input type='number' min={1} max={99} value={speed} onChange={(e) => { setSpeed(e.target.value) }} className='w-[2.5rem] rounded-r-xl p-1 bg-[#fff]' />
                     </div>
-                    <button className='px-2 py-1 rounded-full bg-primary' onClick={() => { setSpeed(speed + 1) }}>+</button>
-                    <button className='px-2 py-1 rounded-full bg-primary' onClick={() => { setSpeed(speed - 1) }}>-</button>
+                    <div className='flex w-20'>
+                        <button className='px-2 w-1/2 py-1 rounded-l-lg border-y border-l hover:border hover:scale-[1.05] bg-white' onClick={() => { setSpeed(speed + 1) }}>+</button>
+                        <button className='px-2 w-1/2 py-1 rounded-r-lg border-y border-r hover:border hover:scale-[1.05] bg-white' onClick={() => { setSpeed(speed - 1) }}>-</button>
+                    </div>
                 </div>
                 {/* Pause or play */}
-                <button className='flex items-center  min-w-16 min-h-20 bg-orange p-10 rounded-lg' onClick={() => { setIsPaused(!isPaused) }}>{isPaused ? 'Play' : 'Pause'}</button>
-
+                {isPaused ?
+                    (
+                        <button className='flex items-center justify-center uppercase text-6xl min-w-16 min-h-20 w-1/2 bg-gray p-10' onClick={() => { setIsPaused(!isPaused) }}>pause</button>
+                    ) : (
+                        <button className='flex items-center justify-center uppercase text-6xl min-w-16 min-h-20 w-1/2 bg-green p-10' onClick={() => { setIsPaused(!isPaused) }}>play</button>
+                    )}
             </div>
         </>
     )
