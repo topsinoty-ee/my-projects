@@ -1,0 +1,63 @@
+/** @format */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans&family=Red+Hat+Display:wght@300;400;500&family=Urbanist:wght@400;500&display=swap');
+
+.footer-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 0, 255, 0) 0%,
+    #423cd1 99.99%,
+    #423cd1 100%
+  );
+}
+
+.btn-purple,
+.btn-black {
+  @apply border-4  bg-white px-4 self-center mt-3 py-2 font-redhat font-semibold border-b-8 rounded-2xl
+}
+.btn-black {
+  @apply border-black;
+}
+.btn-purple {
+  @apply border-purple;
+}
+
+.btn-purple:hover,
+.btn-black:hover {
+  @apply border-b-4;
+}
+
+#CycloneHD a {
+  text-decoration: none;
+  background-image: linear-gradient(var(--blue), var(--green)),
+    linear-gradient(var(--red), var(--yellow)),
+    linear-gradient(var(--fuchsia), var(--navy));
+  background-size: 0px 0px, 100% 0px, 0 0px;
+  background-position: calc(20px * -1) 100%, 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 100ms linear, background-position 200ms linear;
+}
+
+#CycloneHD a:hover {
+  background-size: 20px 2px, 0 2px, 100% 2px;
+  background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
+}
+
+#CycloneHD code a {
+  @apply text-blue;
+}
+
+#CycloneHD #menu {
+  @apply rounded-lg overflow-hidden;
+}
+#CycloneHD #menu li {
+  @apply bg-gray px-4 py-2 hover:bg-white;
+}
+
+#CycloneHD #menu li a {
+  @apply text-white hover:text-black w-full block;
+}
