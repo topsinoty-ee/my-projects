@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Button = ({
   type = 'button',
   color = 'white',
-  disabled,
+  disabled=false,
   onClick,
   children,
   className = '',

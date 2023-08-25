@@ -53,11 +53,12 @@ const Carousel = ({ seconds, isPlaying }) => {
                 <div className='flex items-center justify-center bg-orange p-10 space-x-4 w-1/2'>
                     <div>
                         <span className='rounded-l-xl p-1 bg-white inline-block'>Set speed: </span>
-                        <input type='number' min={1} max={99} value={speed} onChange={(e) => { setSpeed(e.target.value) }} className='w-[2.5rem] rounded-r-xl p-1 bg-[#fff]' />
+                        <input type='number' min={1} max={99} value={speed} onChange={(e) => { setSpeed(e.target.value) }} className='max-w-[2rem] p-1 bg-[#fff]' />
+                        <span className='rounded-r-xl p-1 bg-white inline-block'>seconds</span>
                     </div>
                     <div className='flex w-20'>
-                        <button className='px-2 w-1/2 py-1 rounded-l-lg border-y border-l hover:border hover:scale-[1.05] bg-white' onClick={() => { setSpeed(speed + 1) }}>+</button>
-                        <button className='px-2 w-1/2 py-1 rounded-r-lg border-y border-r hover:border hover:scale-[1.05] bg-white' onClick={() => { setSpeed(speed - 1) }}>-</button>
+                        <button className='px-2 w-1/2 py-1 rounded-l-lg border-y border-l hover:border hover:scale-[1.05] bg-white' onClick={() => { setSpeed(speed + (1/10)) }}>+</button>
+                        <button className='px-2 w-1/2 py-1 rounded-r-lg border-y border-r hover:border hover:scale-[1.05] bg-white' onClick={() => { setSpeed(speed - (1/10)) }}>-</button>
                     </div>
                 </div>
                 {/* Pause or play */}
