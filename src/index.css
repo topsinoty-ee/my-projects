@@ -4,12 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --black: #0c1618;
+  --blue: #162b8c;
+  --yellow: #f5cc00;
+  --yellow-accent: #ffd91a;
+  --orange: #ff900f;
+  --white: #ffffff;
+  --silver: #c0c0c0;
+  --gray: #999999;
+  --red: #ff0000;
+  --maroon: #800000;
+  --olive: #808000;
+  --lime: #00ff00;
+  --green: #008000;
+  --aqua: #00ffff;
+  --teal: #008080;
+  --navy: #000080;
+  --fuchsia: #ff00ff;
+  --purple: #800080;
+}
+
 @layer components {
   .next-prev-btn {
     @apply text-4xl;
   }
   #close {
-    @apply hover:animate-wiggle
+    @apply hover:animate-wiggle;
   }
   .masonry {
     column-count: 2; /* Number of columns */
@@ -32,5 +53,40 @@
 }
 
 .button {
-  @apply px-4 py-2 rounded bg-blue text-yellow hover:font-semibold
+  @apply px-4 py-2 rounded bg-blue text-yellow hover:text-black;
+}
+button:disabled,
+button[disabled],
+button:disabled,
+button[disabled] {
+  background-color: gray !important;
+  color: black !important;
+}
+
+.truncate-ellipsis {
+  @apply max-h-10 relative overflow-hidden text-ellipsis whitespace-nowrap;
+}
+
+.card-image {
+  filter: brightness(100%);
+  transition: filter 1s ease, pointer-events 0s step-end 1s;
+}
+
+.card-image:hover {
+  filter: brightness(70%);
+  transition: filter 1s ease, pointer-events 0s;
+}
+
+.buttons {
+  @apply absolute z-[999] bottom-4 w-full px-6 hidden;
+}
+
+.card-image:hover + .buttons,
+.buttons:hover {
+  @apply transition delay-700 duration-300 ease-in-out flex w-full justify-between items-center;
+}
+
+.modal-container {
+  margin: 0 !important;
+  @apply  shadow-black shadow-lg flex-col w-full h-full min-h-[300px];
 }
