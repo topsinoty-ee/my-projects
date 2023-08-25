@@ -10,6 +10,7 @@ const Projects = () => {
       image: {
         src: 'https://i.ibb.co/wc47d7Y/Customer-database-app.jpg',
         alt: 'Customer database application',
+        description: 'Customer database application'
       },
       title: 'Customer database app',
       text: 'Customer database app made with java, react and tailwindcss',
@@ -68,7 +69,7 @@ const Projects = () => {
   const [modalContent, setModalContent] = useState(null);
 
   const openModal = (title, content) => {
-    setModalContent({title, content});
+    setModalContent({ title, content });
     setIsModalOpen(true);
   };
 
@@ -78,27 +79,32 @@ const Projects = () => {
 
   return (
     <div className="flex flex-col relative items-center p-3 gap-5 container">
-      <div>
-        <h1 className="text-4xl">My Projects</h1>
-      </div>
-      <div className="masonry space-y-10 w-full">
-        {projects.map((card, index) => (
-          <Card
-            key={index}
-            image={card.image}
-            cardText={card.text}
-            cardTitle={card.title}
-            openModal={openModal}
-          />
-        ))}
-        
-      </div>
-      <ModalScreen
+      {!isModalOpen ? (
+        <>
+          <div>
+            <h1 className="text-4xl">My Projects</h1>
+          </div>
+          <div className="masonry space-y-10 w-full">
+            {projects.map((card, index) => (
+              <Card
+                key={index}
+                image={card.image}
+                cardText={card.text}
+                cardTitle={card.title}
+                openModal={openModal}
+                cardDescription={card.description}
+              />
+            ))}
+          </div>
+        </>
+      ) : (
+        <ModalScreen
           content={modalContent?.content}
           title={modalContent?.title}
           closeModal={closeModal}
           isOpen={isModalOpen}
         />
+      )}
     </div>
   );
 };

@@ -1,10 +1,17 @@
+/** @format */
+
 import React, { useState } from 'react';
 import PropTypes, { func } from 'prop-types';
 import Button from './Button';
 import ModalScreen from '../Components/ModalScreen';
 
-
-const Card = ({ image, cardTitle = 'card title', cardText = 'card text' , openModal}) => {
+const Card = ({
+  image,
+  cardTitle = 'card title',
+  cardText = 'card text',
+  cardDescription = 'Nothing here yet...check back later :-<',
+  openModal,
+}) => {
   const [cardImage] = useState({
     src:
       image?.src ||
@@ -13,15 +20,20 @@ const Card = ({ image, cardTitle = 'card title', cardText = 'card text' , openMo
   });
   const [canFullscreen] = useState(Boolean(image?.src));
 
-  function openImageModal(){
+  function openImageModal() {
     openModal(
       cardTitle,
       <img
-        className="rounded-lg select-none card-image"
+        className="rounded-lg select-none"
         src={cardImage.src}
         alt={cardImage.alt}
       />
-    );  }
+    );
+  }
+
+  function openContentModal() {
+    openModal(cardTitle, <div className='bg-white w-full rounded-lg p-4'>{cardDescription}</div>);
+  }
 
   return (
     <div className="flex flex-col m-0 gap-3 w-[100%] max-w-[calc(100%-10px)] max-h-[1040px] bg-silver p-2 rounded-lg">
@@ -38,7 +50,11 @@ const Card = ({ image, cardTitle = 'card title', cardText = 'card text' , openMo
             disabled={!canFullscreen}
             onClick={openImageModal}
           />
-          <Button children="&gt;" className='font-bold'/>
+          <Button
+            children="&gt;"
+            className="font-bold"
+            onClick={openContentModal}
+          />
         </div>
       </div>
       <div>
@@ -56,7 +72,7 @@ Card.propTypes = {
   }),
   cardTitle: PropTypes.string.isRequired,
   cardText: PropTypes.string.isRequired,
-  openModal: PropTypes.func.isRequired
+  openModal: PropTypes.func.isRequired,
 };
 
 export default Card;

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = ({ pages }) => {
     return (
         <header className="w-full max-w-full min-w-full max-h-[10vh] h-16 min-h-[3rem] bg-blue text-yellow flex justify-between p-4 ">
-            <div className="text-2xl">Test Page</div>
+            <div className="text-2xl">O. Promise Temitope</div>
 
             <div className="min-w-[10rem]">
                 <ul className="flex justify-evenly items-center">

@@ -56,14 +56,15 @@
   @apply px-4 py-2 rounded bg-blue text-yellow hover:text-black;
 }
 button:disabled,
-button[disabled], button:disabled,
+button[disabled],
+button:disabled,
 button[disabled] {
   background-color: gray !important;
-  color:black !important;
+  color: black !important;
 }
 
 .truncate-ellipsis {
-  @apply max-h-10 relative overflow-hidden text-ellipsis whitespace-nowrap
+  @apply max-h-10 relative overflow-hidden text-ellipsis whitespace-nowrap;
 }
 
 .card-image {
@@ -77,7 +78,7 @@ button[disabled] {
 }
 
 .buttons {
-  @apply absolute z-[999] bottom-4 w-full px-6 hidden
+  @apply absolute z-[999] bottom-4 w-full px-6 hidden;
 }
 
 .card-image:hover + .buttons,
@@ -85,11 +86,7 @@ button[disabled] {
   @apply transition delay-700 duration-300 ease-in-out flex w-full justify-between items-center;
 }
 
-.modal-container{
-  margin:0 !important;
-  @apply bottom-0 left-5 shadow-black shadow-lg flex-col h-[calc(90vh-75px)] w-[calc(100%-50px)];
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.modal-container {
+  margin: 0 !important;
+  @apply  shadow-black shadow-lg flex-col w-full h-full min-h-[300px];
 }

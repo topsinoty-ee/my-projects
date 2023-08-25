@@ -17,7 +17,7 @@ const ModalScreen = ({ content, title, isOpen = false, closeModal }) => {
       </header>
       <div className="h-full overflow-hidden p-3 bg-gray">
         <div className="h-full w-full rounded-lg flex justify-center">
-          {content}
+          {content ? content : 'Nothing here yet...check back later :-<'}
         </div>
       </div>
     </div>
